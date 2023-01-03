@@ -1,5 +1,5 @@
 [package]
-name = "rust-password-generator"
+name = "console-password-generator"
 version = "0.1.0"
 edition = "2021"
 

@@ -79,13 +79,13 @@ fn gen_pass(params: Vec<&str>) -> Result<String, AppError> {
         counter -= 1;
     }
 
-    // Test enthropy, where lower+upper+numbers = 60
-    let enthropy = (60.0 + _custom_symbols.len() as f32).log2() * params[2].parse::<f32>().unwrap();
-    match enthropy as u16 {
-        0..=75 => println!("Weak password: {}", enthropy),
-        76..=100 => println!("Normal password: {}", enthropy),
-        101..=120 => println!("Strong password: {}", enthropy),
-        121.. => println!("Very strong, exactly what you need: {}", enthropy),
+    // Test entropy, where lower+upper+numbers = 60
+    let entropy = (60.0 + _custom_symbols.len() as f32).log2() * params[2].parse::<f32>().unwrap();
+    match entropy as u16 {
+        0..=75 => println!("Weak password: {}", entropy),
+        76..=100 => println!("Normal password: {}", entropy),
+        101..=120 => println!("Strong password: {}", entropy),
+        121.. => println!("Very strong, exactly what you need: {}", entropy),
     }
     Ok(password)
 }
